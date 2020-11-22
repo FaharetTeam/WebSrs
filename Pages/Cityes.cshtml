@@ -1,0 +1,170 @@
+﻿@page
+@model CityesModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<link rel="stylesheet" href="~/css/site.css" />
+
+<link href="~/js/JavaScript.js" />
+
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card1 {
+        position: relative;
+        height: 200px;
+        width: 320px;
+        margin: 20px;
+        box-shadow: 0 0 5px 2px rgb(94,93,93);
+        transform-style: preserve-3d;
+    }
+
+    .card__img {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+        .card__img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+    .card__body {
+        position: absolute;
+        top: 60%;
+        left: 5px;
+        right: 5px;
+        padding: 10px;
+        height: 100px;
+        background-color: #fff;
+        transform: translateZ(20px) scaleY(0);
+        transform-style: preserve-3d;
+        box-shadow: 0 0 10px 5px rgb(94,93,93);
+        transition: 0.4s;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .card__title {
+        position: relative;
+        text-transform: uppercase;
+        font-size: 25px;
+        font-weight: 800;
+    }
+
+    .card1:hover .card__body {
+        transform: translateZ(20px) scaleY(1);
+    }
+</style>
+<div class="wrapper">
+    <div class="card1">
+        <div class="card__img">
+            <picture>
+                <source srcset="~/image/ALA.jpg" type="image/webp" />
+                <img src="~/image/ALA.jpg" />
+            </picture>
+        </div>
+        <div class="card__body">
+            <h3 class="card__title">Almaty</h3>
+        </div>
+    </div>
+    <div class="card1">
+        <div class="card__img">
+            <picture>
+                <source srcset="~/image/AKX1.jpg" type="image/webp" />
+                <img src="~/image/AKX1.jpg" />
+            </picture>
+        </div>
+        <div class="card__body">
+            <h3 class="card__title">Aktobe</h3>
+        </div>
+    </div>
+    <div class="card1">
+        <div class="card__img">
+            <picture>
+                <source srcset="~/image/ALA.jpg" type="image/webp" />
+                <img src="~/image/ALA.jpg" />
+            </picture>
+        </div>
+        <div class="card__body">
+            <h3 class="card__title">Almaty</h3>
+        </div>
+    </div>
+    <div class="card1">
+        <div class="card__img">
+            <picture>
+                <source srcset="~/image/AKX1.jpg" type="image/webp" />
+                <img src="~/image/AKX1.jpg" />
+            </picture>
+        </div>
+        <div class="card__body">
+            <h3 class="card__title">Aktobe</h3>
+        </div>
+    </div>
+    <div class="card1">
+        <div class="card__img">
+            <picture>
+                <source srcset="~/image/ALA.jpg" type="image/webp" />
+                <img src="~/image/ALA.jpg" />
+            </picture>
+        </div>
+        <div class="card__body">
+            <h3 class="card__title">Almaty</h3>
+        </div>
+    </div>
+    <div class="card1">
+        <div class="card__img">
+            <picture>
+                <source srcset="~/image/AKX1.jpg" type="image/webp" />
+                <img src="~/image/AKX1.jpg" />
+            </picture>
+        </div>
+        <div class="card__body">
+            <h3 class="card__title">Aktobe</h3>
+        </div>
+    </div>
+    <div class="card1">
+        <div class="card__img">
+            <picture>
+                <source srcset="~/image/ALA.jpg" type="image/webp" />
+                <img src="~/image/ALA.jpg" />
+            </picture>
+        </div>
+        <div class="card__body">
+            <h3 class="card__title">Almaty</h3>
+        </div>
+    </div>
+    <div class="card1">
+        <div class="card__img">
+            <picture>
+                <source srcset="~/image/AKX1.jpg" type="image/webp" />
+                <img src="~/image/AKX1.jpg" />
+            </picture>
+        </div>
+        <div class="card__body">
+            <h3 class="card__title">Aktobe</h3>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="~/js/JavaScript.js"></script>

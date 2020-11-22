@@ -1,0 +1,27 @@
+﻿@page
+@model webka.Pages.Employees.EmployeesModel
+@{
+    ViewData["Title"] = "Employees";
+}
+<link rel="stylesheet" href="~/css/site.css" />
+<link href="~/js/JavaScript.js" />
+
+<div class="row">
+    @foreach(var item in Model.Employees)
+    {
+        var photoPath = $"/image/{item.PhotoPath ?? "ALA.jpg"}";
+
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div >
+                <div class="card m-3 ">
+                    <div class="text-center ">
+                        <h3 class="card-header text-center cardHeaderStyle card__body card__title">@item.Name</h3>
+                        <a asp-page="/Employees/Cityclass" asp-route-ID="@item.Id"><img  class="imageThumbnail  card card__img" src="@photoPath" asp-append-version="true" /></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<script type="text/javascript" src="~/js/JavaScript.js"></script>

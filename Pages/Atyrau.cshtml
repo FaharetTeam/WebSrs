@@ -1,0 +1,154 @@
+﻿@page
+@model AtyrauModel
+@{
+    ViewData["Title"] = "Atyrau";
+}
+<link rel="stylesheet" href="~/css/site.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<header>
+
+
+    <div class="im">
+        <img src="~/image/atyrau.jpg" />
+        <div style="position: fixed; top: 250px; left:4%">
+            <a asp-page="/Aktau">
+                <span style="font-size: 50px" class="material-icons">
+                    keyboard_arrow_left
+                </span>
+            </a>
+        </div>
+        <div style="position: fixed; top: 250px; left:92%">
+            <a asp-page="/Karaganda">
+                <span style="font-size: 50px" class="material-icons">
+                    keyboard_arrow_right
+                </span>
+            </a>
+        </div>
+        <p style="position: absolute;left:15%; top: 45px;font-size: 100px;color: #4266bb;text-shadow: black 0 0 50px;font-family: 'Oswald',sans-serif;">Atyrau</p>
+    </div>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div align="center" style="direction:ltr;" id="kub">
+        <div class="wrap">
+            <div class="cube">
+                <div class="front">
+                    <a href="#swip2">
+                        <img src="~/image/c.jpg" />
+                    </a>
+                </div>
+                <div class="back">
+                    <a href="#swip1">
+                        <img src="~/image/m.jpg" />
+                    </a>
+                </div>
+                <div class="top">
+                    <a href="#swip4">
+                        <img src="~/image/p.jpg" />
+                    </a>
+                </div>
+                <div class="bottom">
+                    <a href="#swip">
+                        <img src="~/image/s.jpg" />
+                    </a>
+                </div>
+                <div class="left">
+                    <a href="#swip3">
+                        <img src="~/image/t.jpg" />
+                    </a>
+                </div>
+                <div class="right">
+                    <a href="#swip5">
+                        <img src="~/image/teatr.jpg" />
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <script>
+        var addlogo = true;
+    </script>
+
+    <br /><br /><br /><br />
+    <div class="swiper-container" id="swip">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/pamitat1.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/pamitat2.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/pamitat3.jpgg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/pamitat4.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/pamitat5.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/pamitat6.jpg" /></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+    <br /><br /><br /><br />
+    <div class="swiper-container" id="swip1">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/muzeiat1.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/muzeiat2.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/muzeiat3.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/muzeiat4.jpg" /></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+
+
+    <br /><br /><br /><br />
+    <div class="swiper-container" id="swip2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/mechetat1.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/mechetat2.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/mechetat3.jpg" /></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+    <br /><br /><br /><br />
+    <div class="swiper-container" id="swip3">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/trsat1.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/trsat2.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/trsat3.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/trsat4.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/trsat5.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/trsat6.jpg" /></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+    <br /><br /><br /><br />
+    <div class="swiper-container" id="swip4">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/parkat1.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/parkat2.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/parkat3.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/parkat4.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/parkat5.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/parkat6.jpg" /></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+    <br /><br /><br /><br />
+    <div class="swiper-container" id="swip5">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/teatrat1.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/teatrat2.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/teatrat3.jpg" /></div>
+            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/atyrau/teatrat4.jpg" /></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+</header>

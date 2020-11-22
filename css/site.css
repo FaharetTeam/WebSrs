@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald&display=swap" );
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons" );
+@import url("https://unpkg.com/swiper/swiper-bundle.min.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family: 'Oswald',sans-serif;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+
+
+
+.Almaty {
+    font-size: 100px;
+    color: #4266bb;
+    text-shadow: black 0 0 50px;
+    font-family: 'Oswald',sans-serif;
+}
+
+
+.cube {
+    margin: auto;
+    position: relative;
+    height: 300px;
+    width: 300px;
+    transform-style: preserve-3d;
+}
+
+.cube div {
+    position: absolute;
+    padding: 00px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    opacity: 0.9;
+    background-color: #000;
+    border: solid 1px #eee;
+    color: #fff;
+    font: 10px arial;
+    transition: transform 0.2s ease-in;
+}
+
+.cube img {
+    height: 300px;
+    width: 300px;
+}
+
+.front {
+    transform: translateZ(200px);
+}
+
+.back {
+    transform: translateZ(-100px) rotateY(180deg);
+}
+
+.right {
+    transform: rotateY(-270deg) translateX(100px);
+    transform-origin: top right;
+}
+
+.left {
+    transform: rotateY(270deg) translateX(-100px);
+    transform-origin: center left;
+}
+
+.top {
+    transform: rotateX(-270deg) translateY(-100px);
+    transform-origin: top center;
+}
+
+.bottom {
+    transform: rotateX(270deg) translateY(100px);
+    transform-origin: bottom center;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+.cube {
+    animation: rotate 20s infinite linear;
+}
+
+.wrap:hover .front {
+    transform: translateZ(300px);
+}
+
+.wrap:hover .back {
+    transform: translateZ(-200px) rotateY(180deg);
+}
+
+.wrap:hover .right {
+    transform: rotateY(-270deg) translateZ(100px) translateX(100px);
+}
+
+.wrap:hover .left {
+    transform: rotateY(270deg) translateZ(100px) translateX(-100px);
+}
+
+.wrap:hover .top {
+    transform: rotateX(-270deg) translateZ(100px) translateY(-100px);
+}
+
+.wrap:hover .bottom {
+    transform: rotateX(270deg) translateZ(100px) translateY(100px);
+}
+
+
+
+
+body {
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+}
+
+.swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 200px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    background: #000;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#0006);
+}
+
+.im img{
+    width: 100%;
+    height: 90%;
+    position: relative;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+.wrapper{
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+    height:100vh;
+    align-items:center;
+    justify-content:center;
+}
+.card1{
+    position:relative;
+    height:200px;
+    width:320px;
+    margin:20px;
+    box-shadow:0 0 5px 2px rgb(94,93,93);
+    transform-style:preserve-3d;
+}
+.card__img{
+    width:100%;
+    height:100%;
+    position:relative;
+}
+.card__img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.card__body{
+    position:absolute;
+    top:60%;
+    left:10px;
+    right:50px;
+    padding:10px;
+    height:100px;
+    background-color:#fff;
+    transform:translateZ(20px) scaleY(0);
+    transform-style:preserve-3d;
+    box-shadow:0 0 10px 5px rgb(94,93,93);
+    transition:0.4s;
+    text-align:center;
+    overflow:hidden;
+
+}
+.card__title{
+    position:relative;
+    text-transform:uppercase;
+    font-size:50px;
+    font-weight:800;
+}
+.card:hover .card__body{
+    transform:translateZ(20px) scaleY(1);
+}
+
+
+
+
+
+
+
+
+.imageThumbnail {
+    height: 300px;
+    max-width: 550px;
+}
+
+.cardBoxShadow {
+    -webkit-box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.75);
+}
+
+.cardHeaderStyle {
+    background: rgba(0,0,0,1);
+    background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 31%, rgba(0,0,51,1) 51%, rgba(0,0,102,1) 71%, rgba(0,0,153,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,1)), color-stop(31%, rgba(0,0,0,1)), color-stop(51%, rgba(0,0,51,1)), color-stop(71%, rgba(0,0,102,1)), color-stop(100%, rgba(0,0,153,1)));
+    background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 31%, rgba(0,0,51,1) 51%, rgba(0,0,102,1) 71%, rgba(0,0,153,1) 100%);
+    background: -o-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 31%, rgba(0,0,51,1) 51%, rgba(0,0,102,1) 71%, rgba(0,0,153,1) 100%);
+    background: -ms-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 31%, rgba(0,0,51,1) 51%, rgba(0,0,102,1) 71%, rgba(0,0,153,1) 100%);
+    background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 31%, rgba(0,0,51,1) 51%, rgba(0,0,102,1) 71%, rgba(0,0,153,1) 100%);
+    border-radius: 45px 0 0 0 !important;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.card {
+    border-radius: 45px 0 45px 0;
+}
+
+.buttonShadow {
+    -webkit-box-shadow: inset 0px 0px 20px 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 20px 10px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 20px 10px rgba(0,0,0,0.75);
+}
+
+.card-body {
+    border-radius: 0 0 45px 0;
+}
+
+
+.menuBg {
+    background: rgba(0,0,0,1);
+    background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 31%, rgba(0,0,51,1) 51%, rgba(0,0,102,1) 71%, rgba(0,0,153,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,1)), color-stop(31%, rgba(0,0,0,1)), color-stop(51%, rgba(0,0,51,1)), color-stop(71%, rgba(0,0,102,1)), color-stop(100%, rgba(0,0,153,1)));
+    background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 31%, rgba(0,0,51,1) 51%, rgba(0,0,102,1) 71%, rgba(0,0,153,1) 100%);
+    background: -o-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 31%, rgba(0,0,51,1) 51%, rgba(0,0,102,1) 71%, rgba(0,0,153,1) 100%);
+    background: -ms-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 31%, rgba(0,0,51,1) 51%, rgba(0,0,102,1) 71%, rgba(0,0,153,1) 100%);
+    background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 31%, rgba(0,0,51,1) 51%, rgba(0,0,102,1) 71%, rgba(0,0,153,1) 100%);
+}
+
+
+.containerBordered {
+    border-right: 1px solid #dee2e6;
+    border-left: 1px solid #dee2e6;
+}
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px; /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    background-color:none;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+#toggle-icon {
+    background-color: none;
+    color: white;
+    position: fixed;
+    top: -220px;
+    right: 20px;
+    z-index: 1;
+}
+
+    #toggle-icon i {
+        color: white;
+        background-color: none;
+        font-size: 30px;
+        padding: 10px;
+    }
