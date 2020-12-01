@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using webka.Pages.Employees;
+using WebSRS.Pages.Employees;
 
-namespace webka.Pages.Employees
+namespace WebSRS.Pages.Employees
 {
     public class MockEmployeeRepository : IEmployeeRepository
     {
@@ -82,6 +82,14 @@ namespace webka.Pages.Employees
         public Employee GetEmployee(int id)
         {
             return _employeeList.FirstOrDefault(x => x.Id == id);
+        }
+
+        public IEnumerable<Employee> Search(string searchTerm)
+        {
+            if (string.IsNullOrWhiteSpace(searchTerm))
+                return _employeeList;
+
+            return _employeeList.Where(x => x.Name.ToLower().Contains(searchTerm.ToLower()));
         }
     }
 }

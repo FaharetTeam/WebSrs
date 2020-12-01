@@ -1,0 +1,39 @@
+﻿@page
+@model WebSRS.Pages.CityRegionModel
+
+@{
+    ViewData["Title"] = "City Region";
+    Layout = "~/Pages/Shared/_KZ.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/site.css" />
+<div class="im">
+    <img src="~/image/region.jpg" />
+</div>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <h4 style="color:white;text-shadow:blue 0 0 5px;left:35%"> City</h4>
+            </th>
+            <th>
+                <h4 style="color:white;text-shadow:blue 0 0 5px;left:35%">Region</h4>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody style="left:35%">
+        @foreach (var item in Model.Region)
+        {
+            <tr>
+                <td >
+                    <h5 style="color:white;left:35%">@Html.DisplayFor(modelItem => item.city)</h5>
+                </td>
+                <td>
+                    <h5 style="color:white;left:35%"> @Html.DisplayFor(modelItem => item.region)</h5>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

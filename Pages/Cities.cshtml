@@ -1,0 +1,23 @@
+﻿@page
+@model WebSRS.Pages.CitiesModel
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+    string[] names = new string[14];
+    int count = 0;
+}
+@using WebSRS.Helpers
+@foreach(var item in Model.City)
+{
+    names[count] = @item.Name;
+    count++;
+}
+<h1><a asp-page="/Kazakhstan">Kazakhstan</a></h1>
+@MyHelper.CreateList(Html,names)
+<style>
+    a {
+        color: red;
+    }
+    a:hover {
+        color: red;
+    }
+</style>

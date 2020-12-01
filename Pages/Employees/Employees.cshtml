@@ -1,22 +1,38 @@
 ﻿@page
-@model webka.Pages.Employees.EmployeesModel
+@model WebSRS.Pages.Employees.EmployeesModel
 @{
-    ViewData["Title"] = "Employees";
+    ViewData["Title"] = "Kazakhstan cityes";
+    ViewData["ShowButtons"] = true;
+    Layout = "~/Pages/Shared/_KZ.cshtml";
 }
 <link rel="stylesheet" href="~/css/site.css" />
 <link href="~/js/JavaScript.js" />
+<br /><br />
+
+<form method="get" class="mb-6">
+    <div class="input-group">
+        <input class="form-control" asp-for="SearchTerm" />
+        <div class="input-group-btn">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+</form><br /><hr />
+<a style="text-shadow:blue 0 0 5px" asp-page="/CityRegion"><h5 style="text-align:center">Click to view the regions of the country.</h5></a><hr />
+
+@*@await Component.InvokeAsync("HeadCount")*@
+<vc:head-count department="@null"></vc:head-count>
 
 <div class="row">
-    @foreach(var item in Model.Employees)
+    @foreach (var item in Model.Employees)
     {
         var photoPath = $"/image/{item.PhotoPath ?? "ALA.jpg"}";
 
         <div class="col-12 col-sm-6 col-lg-4">
-            <div >
+            <div>
                 <div class="card m-3 ">
                     <div class="text-center ">
                         <h3 class="card-header text-center cardHeaderStyle card__body card__title">@item.Name</h3>
-                        <a asp-page="/Employees/Cityclass" asp-route-ID="@item.Id"><img  class="imageThumbnail  card card__img" src="@photoPath" asp-append-version="true" /></a>
+                        <a asp-page="/Employees/Cityclass" asp-route-ID="@item.Id"><img class="imageThumbnail  card card__img" src="@photoPath" asp-append-version="true" /></a>
 
                     </div>
                 </div>

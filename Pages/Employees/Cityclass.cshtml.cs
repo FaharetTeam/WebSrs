@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace webka.Pages.Employees
+namespace WebSRS.Pages.Employees
 {
     public class AlmatyModel : PageModel
     {
@@ -21,7 +21,7 @@ namespace webka.Pages.Employees
             Employ = _employeeRepository.GetEmployee(id);
 
             if (id == 0)
-                return RedirectToPage("/Index");
+                return RedirectToPage("/Almaty");
             else if(id==1)
                 return RedirectToPage("/Nursultan");
             else if (id == 2)
