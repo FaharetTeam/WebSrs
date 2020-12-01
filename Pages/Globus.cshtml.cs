@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace WebSRS.Pages
 {
-    public class NursultanModel : PageModel
+    public class GlobusModel : PageModel
     {
         public void OnGet()
         {

@@ -1,0 +1,115 @@
+﻿@page
+@model WebSRS.Pages.KazakhstanModel
+@{
+}
+@{
+    ViewData["Title"] = "Kazakhstan";
+    Layout = "~/Pages/Shared/_KZ.cshtml";
+}
+<div>
+    <img style="position:relative;height:470px;width:950px" src="~/image/kz.jpg" />
+</div>
+<br />
+<br />
+<p style="position: absolute;left:15%; top: 45px;font-size: 100px;color: #4266bb;text-shadow: black 0 0 50px;font-family: 'Oswald',sans-serif;">Republic of Kazakhstan</p>
+<h2 style="text-align:center;text-shadow:blue 0 0 5px"> Basic information</h2>
+<table class="table" style="color:white">
+    <thead>
+        <tr>
+            <th>
+                <h6 style="color:white">@Html.DisplayNameFor(model => model.KZClass[0].Capital)</h6>
+            </th>
+            <th>
+                <h6 style="color:white">@Html.DisplayNameFor(model => model.KZClass[0].Official_languages)</h6>
+            </th>
+            <th>
+                <h6 style="color:white">@Html.DisplayNameFor(model => model.KZClass[0].Legislature)</h6>
+            </th>
+            <th>
+                <h6 style="color:white">@Html.DisplayNameFor(model => model.KZClass[0].President)</h6>
+            </th>
+            <th>
+                <h6 style="color:white">@Html.DisplayNameFor(model => model.KZClass[0].Chairman_of_the_Security_Council)</h6>
+            </th>
+            <th>
+                <h6 style="color:white">@Html.DisplayNameFor(model => model.KZClass[0].Prime_Minister)</h6>
+            </th>
+            <th>
+                <h6 style="color:white">@Html.DisplayNameFor(model => model.KZClass[0].Declared_Independence_from_the_USSR)</h6>
+            </th>
+            <th>
+                <h6 style="color:white">@Html.DisplayNameFor(model => model.KZClass[0].Current_constitution)</h6>
+            </th>
+            <th>
+                <h6 style="color:white">@Html.DisplayNameFor(model => model.KZClass[0].Currency)</h6>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.KZClass)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Capital)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Official_languages)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Legislature)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.President)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Chairman_of_the_Security_Council)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prime_Minister)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Declared_Independence_from_the_USSR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Current_constitution)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Currency)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<br />
+<br />
+<iframe width="910" height="470" src="https://www.youtube.com/embed/F7nCAOIhIUw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br />
+<hr />
+<h2 style="text-align:center;text-shadow:blue 0 0 5px"> Homeland of many nations</h2>
+<h5 style="color:white">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kazakhstan has become a homeland for people of different nationalities and religions, united by a common historical destiny.This diversity of traditions, spiritual heritage and languages
+    is especially valued in the Republic of Kazakhstan, because it is not without reason that the Japanese proverb says: "A person can survive without his relatives, but he cannot survive without
+    neighbors."
+    <br /><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The citizens of Kazakhstan are proud of their multinational state. For centuries, from generation to generation in Kazakhstan, a good tradition of friendship and good relations between peoples
+    has been transmitted and maintained.
+    <br /><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The state language in the Republic of Kazakhstan is Kazakh, the Russian language has the status of a language of interethnic communication and is used on an equal basis with the state language
+    in government agencies, government bodies and other organizations. And the younger generation speaks three languages, including English. Kazakh is the language of ancestors, Russian is the language
+    of communication, and English is developing and becoming popular due to the fact that it is often used in the business world, when <br />
+    communicating with foreign guests of the country.
+</h5>
+<br />
+<hr />
+<h2 style="text-align:center;text-shadow:blue 0 0 5px">
+    Welcome to Kazakhstan!
+</h2>
+<br />
+<h5 style="color:white">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To get acquainted with amazing traditions, delightful nature, skillful interweaving of the ancient and the modern, it is not necessary to strive to travel around the whole world: come to Kazakhstan.
+    They know how to meet guests, and you will feel the warmth of a country located in the very heart of Eurasia.
+</h5>
+<br />
+<br />

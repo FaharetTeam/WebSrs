@@ -1,0 +1,23 @@
+﻿@page
+@model QuestionModel
+@{
+    ViewData["title"] = "Question";
+    Layout = "~/Pages/Shared/_KZ.cshtml";
+}
+
+
+<br />
+<h2 style="text-align:center;color:white;text-shadow: blue 0 0 20px;">Write your problem that you are facing and we will work on this problem.</h2>
+<h4>&nbsp;&nbsp;Please introduce yourself:      </h4>
+<h4>&nbsp;@Html.TextBox("name")<br><br /></h4>
+<h4>&nbsp;&nbsp;Your email:      </h4>
+<h4> &nbsp;@Html.TextBox("email")<br><br /></h4>
+<h4>&nbsp;&nbsp;Choose the correct problem:<br /> &nbsp;@Html.DropDownList("user", new SelectList(new string[] { "with the transition to another page", "with the transition to another page", "can't leave a comment", "I can not delete my history", "another problem" }), "Choose your option")<br /><br /></h4>
+<h4>&nbsp;&nbsp;Describe the problem you encountered on the site:<br /><br />  &nbsp;@Html.TextArea("your_story")</h4><br />
+<h4>How many times have you encountered this problem?</h4><br />
+@Html.RadioButton("text", "t1")
+<h4>For the first time</h4> 
+@Html.RadioButton("text", "t1")
+<h4>Already several times</h4> <br />
+&nbsp;&nbsp;&nbsp;<a asp-page="/Story/Question" class="btn btn-primary m-1 buttonShadow">Submit</a><br />
+

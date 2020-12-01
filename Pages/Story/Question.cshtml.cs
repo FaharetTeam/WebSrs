@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace WebSRS.Pages
+namespace WebSRS.Pages.Story
 {
-    public class NursultanModel : PageModel
+    public class QuestionModel : PageModel
     {
         public void OnGet()
         {

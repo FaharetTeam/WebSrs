@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <body>
+        <link rel="stylesheet" href="~/css/reset.css" />
+        <div class="text-center">
+            <style>
+                canvas {
+                    background-image: url(/css/kosmos.jpg);
+                }
+
+                h2 {
+                    position: absolute;
+                    font-size: 64px;
+                    text-align: center;
+                    top: 5%;
+                    left: 49%;
+                    margin-right: -50%;
+                    transform: translate(-50%, -50%);
+                    color: white;
+                    opacity: 0.7;
+                }
+
+                a {
+                    color: black;
+                    text-decoration: none;
+                    position: absolute;
+                    background-color: white;
+                    opacity: 0.5;
+                    top: 10px;
+                    left: 10px;
+                    font-size: 32px;
+                }
+            </style>
+            <h2 id="Country">Globus</h2>
+            <a asp-area="" asp-page="/Index">Back</a>
+            <canvas id="myscene"></canvas>
+            <script id="vertexShader" type="x-shader/x-vertex">
+                precision mediump float; precision mediump int; uniform mat4 modelViewMatrix; uniform mat4 projectionMatrix; attribute vec3 position; attribute vec4 color; varying vec3 vPosition; void main() { vPosition = position; gl_Position = projectionMatrix
+                   * modelViewMatrix * vec4( position, 1.0 ); } </script>
+            <script id="fragmentShader" type="x-shader/x-fragment">
+                precision mediump float; precision mediump int; uniform float time; varying vec3 vPosition; void main() { float border = 0.2; float radius = 0.5; vec4 color0 = vec4(0.0, 0.0, 0.0, 0.0); vec4 color1 = vec4(1.0, 1.0, 1.0, 1.0); vec2 m = vPosition.xy;
+                       float dist = radius - sqrt(m.x * m.x + m.y * m.y); float t = 0.0; if (dist > border) t = 1.0; else if (dist > 0.0) t = dist / border; gl_FragColor = mix(color0, color1, t); } </script>
+            <script type="module">
+                import * as THREE from "../js/three/build/three.module.js";
+                import { OrbitControls } from "../js/three/examples/jsm/controls/OrbitControls.js"
+                let text = document.getElementById('Country');
+                let canvas = document.getElementById('myscene');
+                let width = document.documentElement.clientWidth;
+                let height = document.documentElement.clientHeight;
+                var mouse = new THREE.Vector2();
+                let INTERSECTED;
+                let raycaster = new THREE.Raycaster();
+                let renderer = new THREE.WebGLRenderer({
+                    canvas: canvas,
+                    antialias: true,
+                    alpha: true
+                });
+
+                let points = [
+                    {
+                        title: 'Atyrau',
+                        lat: 47.2057846,
+                        long: 50.9501071
+                    },
+                    {
+                        title: 'Ural',
+                        lat: 50.9167429,
+                        long: 46.5299041
+                    },
+                    {
+                        title: 'Aktau',
+                        lat: 44.1857944,
+                        long: 50.9452811
+                    },
+                    {
+                        title: 'Aktobe',
+                        lat: 50.1162173,
+                        long: 56.0368352
+                    },
+                    {
+                        title: 'Karaganda',
+                        lat: 49.7221293,
+                        long: 72.2500168
+                    },
+                    {
+                        title: 'Kyzylorda',
+                        lat: 45.031368,
+                        long: 65.241242
+                    },
+                    {
+                        title: 'Nursultan',
+                        lat: 50.9043665,
+                        long: 69.71092
+                    },
+                    {
+                        title: 'Pavlodar',
+                        lat: 52.4278976,
+                        long: 76.1939978
+                    },
+                    {
+                        title: 'Petropavl',
+                        lat: 54.6589909,
+                        long: 68.2134776
+                    },
+                    {
+                        title: 'Shymkent',
+                        lat: 42.3922956,
+                        long: 68.8939918
+                    },
+                    {
+                        title: 'Taldykorgan',
+                        lat: 44.9946397,
+                        long: 78.155501
+                    },
+                    {
+                        title: 'Uskemen',
+                        lat: 49.9467805,
+                        long: 81.8512554
+                    },
+                    {
+                        title: 'Taraz',
+                        lat: 42.9866323,
+                        long: 70.7553549
+                    },
+                    {
+                        title: 'Almaty',
+                        lat: 43.1722236,
+                        long: 75.8897798
+                    }
+                ];
+
+                renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1);
+                renderer.setSize(width, height);
+                var camera = new THREE.PerspectiveCamera(40, width / height, 1, 1000);
+
+                // SCENE
+                let scene = new THREE.Scene();
+
+                let group = new THREE.Group();
+                scene.add(group);
+                camera.position.set(70, -10, 80);
+                camera.lookAt(10, 20, 30);
+                var controls = new OrbitControls(camera, renderer.domElement);
+
+                var light = new THREE.AmbientLight(0x404040, 3);
+                scene.add(light);
+
+                var directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+                scene.add(directionalLight);
+
+                function randn_bm() {
+                    var u = 0, v = 0;
+                    while (u === 0) u = Math.random();
+                    while (v === 0) v = Math.random();
+                    return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+                }
+
+                function calcPosFromLatLonRad(lat, lon, radius) {
+                    var phi = (90 - lat) * (Math.PI / 180);
+                    var theta = (lon + 180) * (Math.PI / 180);
+
+                    let x = -((radius) * Math.sin(phi) * Math.cos(theta));
+                    let z = ((radius) * Math.sin(phi) * Math.sin(theta));
+                    let y = ((radius) * Math.cos(phi));
+
+                    console.log([x, y, z]);
+                    return [x, y, z];
+                }
+
+
+                // DO SOMETHING
+
+                var geometry = new THREE.SphereGeometry(25, 132, 132);
+                var material = new THREE.MeshPhongMaterial({
+                    map: THREE.ImageUtils.loadTexture('img/earth-small.jpg'),
+                    displacementMap: THREE.ImageUtils.loadTexture('img/earthbump1k.jpg'),
+                    displacementScale: 3,
+                });
+                var sphere = new THREE.Mesh(geometry, material);
+                group.add(sphere);
+
+                let R = 27;
+                let planes = [];
+                let spheres = [];
+
+                points.forEach(p => {
+
+                    let pos = calcPosFromLatLonRad(p.lat, p.long, R);
+                    let geometry = new THREE.PlaneGeometry(1, 1);
+                    let material = new THREE.RawShaderMaterial({
+                        uniforms: {
+                            time: { value: 0 },
+                            hover: { value: 0 }
+                        },
+                        transparent: true,
+                        vertexShader: document.getElementById('vertexShader').textContent,
+                        fragmentShader: document.getElementById('fragmentShader').textContent
+                    });
+                    let plane = new THREE.Mesh(geometry, material);
+
+                    plane.position.x = pos[0];
+                    plane.position.y = pos[1];
+                    plane.position.z = pos[2];
+
+                    plane.name = p.title;
+
+                    group.add(plane);
+                    planes.push(plane);
+                    spheres.push(plane);
+                });
+
+                spheres.push(sphere);
+
+                function Render() {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                    planes.forEach(e => {
+                        let conj = new THREE.Quaternion();
+                        conj.copy(group.quaternion);
+                        conj.conjugate();
+
+                        e.quaternion.multiplyQuaternions(
+                            conj,
+                            camera.quaternion
+                        );
+                    });
+
+                    renderer.render(scene, camera);
+                    window.requestAnimationFrame(Render);
+                }
+                Render();
+
+                function onResize() {
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+                    camera.aspect = (window.innerWidth / window.innerHeight);
+                    camera.updateProjectionMatrix();
+                }
+                window.addEventListener('resize', onResize, false);
+                document.addEventListener('mousemove', onDocumentMouseMove, false);
+                document.addEventListener('click', onDocumentMouseDown, false);
+
+                function onDocumentMouseMove(event) {
+                    event.preventDefault();
+
+                    mouse.set(((event.clientX + 13) / window.innerWidth) * 2 - 1, - ((event.clientY) / window.innerHeight) * 2 + 1);
+                    raycaster.setFromCamera(mouse, camera);
+
+                    const intersects = raycaster.intersectObjects(spheres);
+
+                    if (intersects.length > 0) {
+                        text.innerHTML = intersects[0].object.name;
+                    } else {
+                        text.innerHTML = "Globus";
+                    }
+                }
+
+                function onDocumentMouseDown(event) {
+                    if (text.innerHTML != "") document.location.href = "/" + text.innerHTML;
+                }
+            </script>
+        </div>
+        @RenderBody();
+    </body>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿@page
+@model WebSRS.Pages.RegisterModel
+@{
+}
+
+<link rel="stylesheet" href="~/css/Modal.css" />
+<link rel="stylesheet" href="~/css/LoginForm.css" />
+
+<button onclick="document.getElementById('id01').style.display='block'" style="text-align:center; width: auto; margin-left:47%">Register</button>
+
+<div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'"
+          class="close" title="Close Modal">&times;</span>
+    <div>
+        <div>
+            <form class="modal-content animate" method="post">
+                <div class="container1 container">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div>
+                        <label asp-for="Account.Login" class="control-label"></label>
+                        <input asp-for="Account.Login" class="form-control" placeholder="Enter Username" required />
+                        <span asp-validation-for="Account.Login" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label asp-for="Account.Password" class="control-label"></label>
+                        <input asp-for="Account.Password" class="form-control" placeholder="Enter Password" required />
+                        <span asp-validation-for="Account.Password" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <input type="submit" value="Register" class="btn btn-primary" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script>
+    var modal = document.getElementById('id01');
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>

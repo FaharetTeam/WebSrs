@@ -1,0 +1,36 @@
+﻿@page
+@model StudentsModel
+@{
+    ViewData["title"] = "Students";
+    Layout = "~/Pages/Shared/_KZ.cshtml";
+}
+<link rel="stylesheet" href="~/css/site.css" />
+<link href="~/js/JavaScript.js" />
+<br /><br />
+
+<div class="row">
+    @foreach (var item in Model.Students)
+    {
+        var photos = $"/image/{item.photo ?? "ural.jpg"}";
+
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card-deck">
+                <div class="card m-3 cardBoxShadow">
+                    <div class="card-header text-center cardHeaderStyle card__body card__title">
+                        <h2>@item.lastname &nbsp&nbsp @item.name</h2>
+                    </div>
+
+                    <div class="text-center cardBodyStyle">
+                        <img class="imageThumbnail  card card__img" src="@photos" asp-append-version="true" />
+                    </div>
+
+                    <div class="card-footer text-center ">
+                        <a asp-page="/Students/Details" asp-route-ID="@item.id" class="btn btn-primary m-1 buttonShadow">View</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<script type="text/javascript" src="~/js/JavaScript.js"></script>

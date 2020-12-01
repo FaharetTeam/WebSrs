@@ -1,170 +1,30 @@
 ﻿@page
-@model webka.Pages.IndexModel
+@model WebSRS.Pages.IndexModel
+
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
 }
-<link rel="stylesheet" href="~/css/site.css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-
-<header>
-    <div class="im">
-        <img src="~/image/ALA.jpg" />
-        <div style="position: fixed; top: 250px; left:4%">
-            <a asp-page="/Shymkent">
-                <span style="font-size: 50px" class="material-icons">
-                    keyboard_arrow_left
-                </span>
-            </a>
-        </div>
-        <div style="position: fixed; top: 250px; left:92%">
-            <a asp-page="/Nursultan">
-                <span style="font-size: 50px" class="material-icons">
-                    keyboard_arrow_right
-                </span>
-            </a>
-        </div>
-        <p style="position: absolute;left:15%; top: 45px;font-size: 100px;color: #4266bb;text-shadow: black 0 0 50px;font-family: 'Oswald',sans-serif;">Almaty</p>
-    </div>
-
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <div align="center" style="direction:ltr;" id="kub">
-        <div class="wrap">
-            <div class="cube">
-                <div class="front">
-                    <a href="#swip2">
-                        <img src="~/image/c.jpg" />
-                    </a>
-                </div>
-                <div class="back">
-                    <a href="#swip1">
-                        <img src="~/image/m.jpg" />
-                    </a>
-                </div>
-                <div class="top">
-                    <a href="#swip4">
-                        <img src="~/image/p.jpg" />
-                    </a>
-                </div>
-                <div class="bottom">
-                    <a href="#swip">
-                        <img src="~/image/s.jpg" />
-                    </a>
-                </div>
-                <div class="left">
-                    <a href="#swip3">
-                        <img src="~/image/t.jpg" />
-                    </a>
-                </div>
-                <div class="right">
-                    <a href="#swip5">
-                        <img src="~/image/teatr.jpg" />
-                    </a>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <script>
-        var addlogo = true;
-    </script>
-
-    <br /><br /><br /><br />
-    <div class="swiper-container" id="swip">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/image/s1.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/image/s2.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/image/s3.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/image/s4.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/image/s5.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/image/s6.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/image/s7.jpg" /></div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
-
-
-    <br /><br /><br /><br />
-    <div class="swiper-container" id="swip1">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/image/m1.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/image/m2.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/image/m3.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/image/m4.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/image/m5.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/image/m6.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/image/m7.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="~/image/m8.jpg" /></div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
-
-
-
-
-    <br /><br /><br /><br />
-    <div class="swiper-container" id="swip2">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/c1.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/c2.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/c3.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/c4.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/c5.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/c6.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/c7.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/c8.jpg" /></div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
-
-
-    <br /><br /><br /><br />
-    <div class="swiper-container" id="swip3">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/t1.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/t2.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/t3.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/t4.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/t5.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/t6.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/t7.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/t8.jpg" /></div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
-
-
-    <br /><br /><br /><br />
-    <div class="swiper-container" id="swip4">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/p1.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/p2.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/p3.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/p4.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/p5.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/p6.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/p7.jpg" /></div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
-
-
-    <br /><br /><br /><br />
-    <div class="swiper-container" id="swip5">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/teatr1.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/teatr2.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/teatr3.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/teatr4.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/teatr5.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/teatr6.jpg" /></div>
-            <div class="swiper-slide"><img style="width:300px; height:300px;" src="image/teatr7.jpg" /></div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
-
-</header>
+<style>
+    hr {
+        width: 150px;
+        background-image: url(/img/line.png);
+        background-size: 150px 9px;
+        height: 9px;
+        border: none;
+        margin-top: 18px;
+        margin-bottom: 25px;
+    }
+</style>
+<h1 style="text-align:center">
+    @Html.DisplayFor(model => model.AboutS.first)
+</h1>
+<hr/>
+<p style="font-size: 24px; text-indent: 1.5em;">
+    @Html.DisplayFor(model => model.AboutS.second)
+</p>
+<hr/>
+<p style="font-size: 24px; text-indent: 1.5em;">
+    @Html.DisplayFor(model => model.AboutS.third)
+</p>

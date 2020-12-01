@@ -1,7 +1,8 @@
 ﻿@page
-@model TarazModel
+@model CreateModel
 @{
     ViewData["Title"] = "Taraz";
+    Layout = "~/Pages/Shared/_KZ.cshtml";
 }
 <link rel="stylesheet" href="~/css/site.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -154,5 +155,24 @@
         </div>
         <div class="swiper-pagination"></div>
     </div>
+    <br /><br /><hr />
 
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="User.Comment" class="control-label"></label>
+                    <input asp-for="User.Comment" class="form-control" />
+                    <span asp-validation-for="User.Comment" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
 </header>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
